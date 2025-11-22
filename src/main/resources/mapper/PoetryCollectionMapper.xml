@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间改为你的 CollectionMapper 接口全限定名 -->
+<mapper namespace="com.poetryforum.mapper.PoetryCollectionMapper">
+
+    <!-- 自定义查询：查询指定状态的诗集及对应限量库存（类比原优惠券查询） -->
+    <select id="queryCollectionWithStock" resultType="com.poetryforum.entity.PoetryCollection" parameterType="java.lang.Integer">
+        SELECT
+        c.`id`, c.`name`, c.`intro`, c.`price`, c.`type`, c.`status`,
+        lc.`stock` , lc.`begin_time` , lc.`end_time`
+        FROM tb_collection c
+        <!-- 左关联限量诗集表 -->
+        LEFT JOIN tb_limited_collection lc ON c.id = lc.collection_id
+        <!-- 查询条件：状态为传入的 status（1=上架） -->
+        WHERE c.status = #{status}
+    </select>
+</mapper>
