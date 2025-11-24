@@ -31,17 +31,17 @@ public class CollectionController {
         return Result.ok(poetryCollection.getId());
     }
 
-//    /**
-//     * 新增秒杀券
-//     * @param PoetryCollection 优惠券信息，包含秒杀信息
-//     * @return 优惠券id
-//     */
-//    @PostMapping("seckill")
-//    public Result addSeckillPoetryCollection(@RequestBody PoetryCollection PoetryCollection) {
-//        PoetryCollectionService.addSeckillPoetryCollection(PoetryCollection);
-//        return Result.ok(PoetryCollection.getId());
-//    }
-//
+    /**
+     * 新增限量诗集
+     * @param poetryCollection 优惠券信息，包含秒杀信息
+     * @return 优惠券id
+     */
+    @PostMapping("addLimited")
+    public Result addSeckillPoetryCollection(@RequestBody PoetryCollection poetryCollection) {
+        poetryCollectionService.addLimitedPoetryCollection(poetryCollection);
+        return Result.ok(poetryCollection.getId());
+    }
+
     /**
      * 根据诗词名称关键字分页查询诗集信息,可以使用elasticSearch实现
      * @param name 名称关键字

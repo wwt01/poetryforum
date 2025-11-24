@@ -32,7 +32,7 @@ public class PoemController {
      * @param id 诗词id
      * @return 诗词详情数据
      */
-    @GetMapping("/{id}")
+    @GetMapping("/{id:\\d+}")
     public Result queryPoemById(@PathVariable("id") Long id) {
 
         return poemService.queryById(id);

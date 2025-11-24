@@ -8,10 +8,10 @@
         <version>2.3.12.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.hmdp</groupId>
-    <artifactId>hm-dianping</artifactId>
+    <groupId>com.poetryforum</groupId>
+    <artifactId>poetry-forum</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>hm-dianping</name>
+    <name>poetry-forum</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
@@ -86,6 +86,12 @@
             <artifactId>canal.client</artifactId>
             <version>1.1.0</version>
         </dependency>
+<!--        &lt;!&ndash; SpringDoc OpenAPI 核心依赖（Swagger 3.0） &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springdoc</groupId>-->
+<!--            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
+<!--            <version>2.6.0</version> &lt;!&ndash; 适配 Spring Boot 3.x，若用 2.x 请选择 1.6.x 版本 &ndash;&gt;-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>
